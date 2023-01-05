@@ -37,6 +37,7 @@ border-radius: 10px;
 padding-bottom: 20px;
 padding-left: 20px
 `
+
 function Thumb({cover, title}) {
 
     return (

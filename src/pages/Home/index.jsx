@@ -28,21 +28,10 @@ BackgroundSection: Background
 },
 ]
 
-let Home = React.createClass({
-  createThumb: function (cover, title) {
-    return <Thumb source={cover} title={title} />;
-  },
-
-  createThumbs: function (covers, titles) {
-    return (
-      covers.map(this.createThumb) ||
-      titles.map(this.createThumb)
-      );
-  },
 
 
 
-render: function Home() {
+function Home() {
   
     return (
       <div>
@@ -52,32 +41,17 @@ render: function Home() {
         text={profile.TextSection}/> ))}
         <DivDisplay>
 
-        {this.createThumb(data.covers, data.titles)}
-          <Thumb>
+        {data.map((item, cover, title, i) => (
+          <Thumb source={item.cover} title={item.title}  key={i} />
+        ))}
 
-          </Thumb>
-          <Thumb>
-
-</Thumb>
-<Thumb>
-
-</Thumb>
-<Thumb>
-
-</Thumb>
-<Thumb>
-
-</Thumb>
-<Thumb>
-
-</Thumb>
         </DivDisplay>
       </div>
 
       
     )
   }
-});
+
   
   
   export default Home
