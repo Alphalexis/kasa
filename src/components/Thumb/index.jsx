@@ -1,13 +1,19 @@
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
+import DefaultThumb from '../../assets/images/ImgThumb.png'
 
 
+
+const DivThumb = styled.div`
+height: 400px;
+`
 
 const TextTitre = styled.h3`
-position: absolute;
+position: relative;
 height: 52px;
 width: 300px;
 left: 0px;
-top: 406px;
+top: -382px;
 
 
 font-family: 'Montserrat';
@@ -31,15 +37,25 @@ border-radius: 10px;
 padding-bottom: 20px;
 padding-left: 20px
 `
-function Thumb() {
+function Thumb({cover, title}) {
 
     return (
-      <div>
-        <img src="imgThumb.png" alt="Thumb"/>
-        <TextTitre>Titre de la location</TextTitre>
+      <DivThumb>
+        <img src={cover} alt="Thumb"/>
+        <TextTitre>{title}</TextTitre>
         
-      </div>
+        </DivThumb>
     )
+  }
+
+  Thumb.propTypes = {
+    cover: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }
+
+  Thumb.defaultProps = {
+    cover: DefaultThumb,
+    title:'',
   }
   
   export default Thumb
