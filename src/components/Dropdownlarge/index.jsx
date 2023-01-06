@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import React, { useState } from 'react';
+import PropTypes from 'prop-types'
 
 const TextTitre = styled.h2`
 position: relative;
@@ -51,7 +52,7 @@ width 70%
 
 
 
-function Dropdown() {
+function Dropdown({text,title}) {
 
   const Display = () => {
     
@@ -85,15 +86,24 @@ function Action() {
 
     return (
       <DivDisplay>
-        <TextTitre onClick={Action}>Description
+        <TextTitre onClick={Action}>{title}
         <img src="Vector.png" alt="Vector" id='Vector'/>
         </TextTitre>
         {open && (
-        <TextInfo className="Display">Vous serez à 50m du canal Saint-martin où vous pourrez pique-niquer l'été et à côté de nombreux bars et restaurants. Au cœur de Paris avec 5 lignes de métro et de nombreux bus. Logement parfait pour les voyageurs en solo et les voyageurs d'affaires. Vous êtes à1 station de la gare de l'est (7 minutes à pied). </TextInfo>
+        <TextInfo className="Display">{text}</TextInfo>
         )}
         </DivDisplay>
     )
   }
 
+  Dropdown.propTypes = {
+    title: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+  }
+
+  Dropdown.defaultProps = {
+    title:'',
+    text:'',
+  }
   
   export default Dropdown
