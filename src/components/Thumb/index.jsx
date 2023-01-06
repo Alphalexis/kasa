@@ -2,7 +2,14 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import DefaultThumb from '../../assets/images/ImgThumb.png'
 
-
+const BackgroundSection = styled.img`
+height: 340px;
+width: 340px;
+left: 0px;
+top: 0px;
+border-radius: 10px;
+object-fit: cover;
+`
 
 const DivThumb = styled.div`
 height: 400px;
@@ -42,7 +49,7 @@ function Thumb({cover, title}) {
 
     return (
       <DivThumb>
-        <img src={cover} alt="Thumb"/>
+        <BackgroundSection src={cover} alt="Thumb"/>
         <TextTitre>{title}</TextTitre>
         
         </DivThumb>

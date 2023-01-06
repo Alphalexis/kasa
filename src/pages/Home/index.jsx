@@ -42,7 +42,7 @@ function Home() {
         <DivDisplay>
 
         {data.map((item, cover, title, i) => (
-          <Thumb source={item.cover} title={item.title}  key={i} />
+          <Thumb cover={item.cover} title={item.title}  key={i} />
         ))}
 
         </DivDisplay>
