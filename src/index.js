@@ -9,22 +9,6 @@ import Layout from './pages/Layout/Layout';
 import FicheLogement from './pages/FicheLogement';
 import Error from './pages/Error'
 
- /*
-async function getLogements() {
-  fetch("logements.json", { mode: "no-cors" })
-      .then((response) => response.json())
-      .then((data) => displayData(data.logements));
-}
-
-async function displayData(logements) {
-  const logementsSection = document.querySelector(".photographer_section");
-
-  logements.forEach((photographer) => {
-          const logementsModel = logementsFactory(logements);
-          const userCardDOM = logementsModel.getUserCardDOM();
-          logementsSection.appendChild(userCardDOM);
-      });
-}*/
 
 ReactDOM.render(
   <React.StrictMode>
@@ -44,15 +28,3 @@ ReactDOM.render(
   </React.StrictMode>,
 document.getElementById('root')
 )
-
-
-/*
-async function init() {
-  // Récupère les datas des photographes
-  await getLogements();
-  //   displayData(photographers);
-}
-
-
-
-init();*/

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import logo from '../../assets/images/LOGOFooter.png'
 
 const DivFooter = styled.div`
 background-color: black;
@@ -21,7 +22,7 @@ letter-spacing: 0em;
 function Footer() {
   return (
     <DivFooter>
-          <img src="LOGOFooter.png" alt="Kasa logo"/>
+          <img src={logo} alt="Kasa logo"/>
     <TextFooter>© 2020 Kasa. All rights reserved</TextFooter>
   </DivFooter>
   )

@@ -36,15 +36,16 @@ const StyledLink = styled(Link)`
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 500;
-font-size: 24px;
+font-size: 18px;
 line-height: 142.6%;
 /* or 34px */
+margin-top: 50px;
 
 
 text-decoration-line: underline;
 
 color: #FF6060;
-text-decoration: none;
+
 `
 
 
@@ -55,7 +56,7 @@ function Error() {
         <DivDisplay>
         <D404>404</D404>
         <Oups>Oups! La page que vous demandez n'existe pas.</Oups>
-        <StyledLink to="/" >Retourner sur la page d’accueil</StyledLink>
+        <StyledLink to="/">Retourner sur la page d’accueil</StyledLink>
         </DivDisplay>
       </div>
     )

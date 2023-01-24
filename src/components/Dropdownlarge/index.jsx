@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import React, { useState } from 'react';
 import PropTypes from 'prop-types'
+import up from '../../assets/images/Vector.png'
+import down from '../../assets/images/Vector-flip.png'
 
 const TextTitre = styled.h2`
 position: relative;
@@ -40,14 +42,20 @@ background: #F7F7F7;
 border-radius: 5px;
 width: 100%;
 padding: 30px 20px;
+margin-top: -16px;
 
 
 color: #FF6060;
 
-
 `
 const DivDisplay = styled.div`
-width 70%
+width 50%
+`
+
+const Flip = styled.img`
+position: relative;
+bottom: 30px;
+left: 99%;
 `
 
 
@@ -61,36 +69,19 @@ function Dropdown({text,title}) {
   
   const [open, setOpen] = useState(false);
 
-  const Rotate = () => {
-
-    var rotated = false;
-    document.getElementById('Vector').onclick = function(){
-      var div = document.getElementById('Vector'),
-        angle = rotated ? 0 : 180;
-
-    div.style.mozTransform    = 'rotate('+ angle +'deg)'; 
-    div.style.msTransform     = 'rotate('+ angle +'deg)'; 
-    div.style.oTransform      = 'rotate('+ angle +'deg)'; 
-    div.style.transform       = 'rotate('+ angle +'deg)'; 
-    
-    rotated = !rotated;
-}
-
-    
-  };
+;
 
 function Action() {
-  Rotate();
   Display();
 }
 
     return (
       <DivDisplay>
         <TextTitre onClick={Action}>{title}
-        <img src="Vector.png" alt="Vector" id='Vector'/>
+        <img src={up} alt="Vector" id='Vector'/>
         </TextTitre>
         {open && (
-        <TextInfo className="Display">{text}</TextInfo>
+        <><Flip src={down} alt="Vector" id='Vector-flip' /><TextInfo className="Display">{text}</TextInfo></>
         )}
         </DivDisplay>
     )

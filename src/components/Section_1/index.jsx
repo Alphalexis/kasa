@@ -34,7 +34,7 @@ const DivDisplay = styled.div`
 display: flex;
 justify-content: center;
 margin-bottom: 43px;
-margin-top: 171px;
+margin-top: 50px;
 `
 const BackgroundSection = styled.img`
 

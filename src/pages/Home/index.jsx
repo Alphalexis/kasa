@@ -7,18 +7,24 @@ import React from 'react';
 
 console.log(data);
 
+const DivProper = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+`
+
 const DivDisplay = styled.div`
 display: flex;
 column-gap: 50px;
 flex-wrap: wrap;
+justify-content: center;
 width: 1180px;
 background: #F7F7F7;
 border-radius: 25px;
-padding-right: 0px;
-padding-left: 50px;
+padding-right: 20px;
+padding-left: 20px;
 padding-top: 50px;
 padding-bottom: 0px;
-margin-left:100px;
 margin-bottom:43px;
 `
 const freelanceProfiles = [
@@ -32,24 +38,29 @@ BackgroundSection: Background
 
 
 function Home() {
-  
+  console.log(data,"data")
+  console.log(freelanceProfiles,"freelanceProfiles")
     return (
-      <div>
-        {freelanceProfiles.map((profile) => (
+      <DivProper>
+        {freelanceProfiles.map((profile,i) => (
         <Section 
         picture={profile.BackgroundSection} 
-        text={profile.TextSection}/> ))}
+        text={profile.TextSection}
+        key={i}
+        /> ))}
+
         <DivDisplay>
 
-        {data.map((item, cover, title, i) => (
-          <Thumb cover={item.cover} title={item.title}  key={i} />
+        {data.map((item, i) => (
+          <Thumb cover={item.cover} title={item.title} key={i} id={item.id} />
         ))}
 
         </DivDisplay>
-      </div>
+      </DivProper>
 
       
     )
+
   }
 
   

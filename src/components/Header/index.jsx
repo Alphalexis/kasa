@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import logo from '../../assets/images/LOGO.png'
 
 const DivHeader = styled.div`
 display: flex;
@@ -8,7 +9,7 @@ text-align: right;
 justify-content: space-between;
 margin-left: 100px;
 margin-top: 40px;
-width:1270px;
+width:88%;
 `
 
 const DivLink = styled.div`
@@ -36,7 +37,7 @@ function Header() {
   return (
     <nav>
       <DivHeader>
-      <img src="LOGO.png" alt="Kasa logo"/>
+      <img src={logo} alt="Kasa logo"/>
       <DivLink>
         <StyledLink to="/" >Accueil</StyledLink>
       <StyledLink to="/about">A Propos</StyledLink>

@@ -1,12 +1,14 @@
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const TextTag = styled.h3`
 position: static;
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 500;
+font-family: Montserrat;
 font-size: 14px;
-line-height: 142.6%;
+font-weight: 500;
+line-height: 20px;
+letter-spacing: 0em;
+
 
 color: #FFFFFF;
 
@@ -18,13 +20,23 @@ width: fit-content;
 height: 25px;
 `
 
-function Tag() {
-
+function Tag(props) {
+let {text} = props;
+console.log(text, "text de tag", typeof text)
     return (
       <div>
-        <TextTag>tag-name</TextTag>        
+        <TextTag>{text}</TextTag>        
       </div>
     )
   }
+
+  Tag.propTypes = {
+    text: PropTypes.string.isRequired
+  }
+
+  Tag.defaultProps = {
+    text:''
+  }
+  
   
   export default Tag
