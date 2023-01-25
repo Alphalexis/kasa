@@ -5,6 +5,7 @@ import Carrousel from '../../components/Carrousel'
 import Dropdown from '../../components/Dropdown'
 import Tag from '../../components/Tag'
 import { useParams } from "react-router-dom";
+import { Navigate } from 'react-router-dom'
 
 console.log(data, 'data dans logement')
 
@@ -165,71 +166,83 @@ function FicheLogement() {
 
   const item = data.find(element => element.id === id);
 
-  console.log(item, "item");
-
-  const description = item.description
-  console.log(description, "description")
-
-  const equipments = item.equipments
-  console.log(equipments, "equipments", typeof equipments)
-
-  const rating = item.rating
-  console.log(rating, "rating")
-
-  const host = item.host
-  console.log(host, "host")
-
-  const name = host.name
-  console.log(name, "name")
-
-  const tags = item.tags
-  console.log(tags, "tags", typeof tags)
-
-  const picture = host.picture
-  console.log(picture, "picture")
-
-  const placename = item.title
-  console.log(picture, "picture")
-
-  const location = item.location
-  console.log(picture, "picture")
-
   return (
-    <DivGlobal>
-      <DivMain>
-        <Carrousel picture={item.pictures} key={item.id} id={item.id} />
+    <section className="content">
+      {item ?
+        <>
+          <DivGlobal>
+            <DivMain>
+              <Carrousel picture={item.pictures} key={item.id} id={item.id} />
 
-        <DivTitle>
-          <DivName>
-            <PlaceName>{placename}</PlaceName>
-            <Location>{location}</Location>
-            <DivTag>
-            {tags.map((item, i) => (
-              <Tag text={item} key={i} />
-            ))}
-          </DivTag>
-          </DivName>
-          <DivRate>
-          <DivPic>
-            <HostName>{name}</HostName>
-            <HostPic src={picture} />
-          </DivPic>
+              <DivTitle>
+                <DivName>
+                  <PlaceName>{item.title}</PlaceName>
+                  <Location>{item.location}</Location>
+                  <DivTag>
+                    {item.tags.map((item, i) => (
+                      <Tag text={item} key={i} />
+                    ))}
+                  </DivTag>
+                </DivName>
+                <DivRate>
+                  <DivPic>
+                    <HostName>{item.host.name}</HostName>
+                    <HostPic src={item.host.picture} />
+                  </DivPic>
 
-          <Rating rate={rating} key={rating.id} />
-        </DivRate>
-        </DivTitle>
-
-
-
-        <DivDrop>
-          <Dropdown title='Description' text={description} key={description} />
-          <Dropdown title='Equipements' style={{ textAlign: 'right' }} text={equipments} key={equipments} />
-        </DivDrop>
-      </DivMain>
-    </DivGlobal>
-  )
-}
+                  <Rating rate={item.rating} key={item.rating.id} />
+                </DivRate>
+              </DivTitle>
 
 
 
-export default FicheLogement
+              <DivDrop>
+                <Dropdown title='Description' text={item.description} key={item.description} />
+                <Dropdown title='Equipements' style={{ textAlign: 'right' }} text={item.equipments} key={item.equipments} />
+              </DivDrop>
+            </DivMain>
+          </DivGlobal>
+        </>
+        : <Navigate to="/*" />}
+    </section>
+  );
+                    }
+
+  /*
+    return (
+      <DivGlobal>
+        <DivMain>
+          <Carrousel picture={item.pictures} key={item.id} id={item.id} />
+  
+          <DivTitle>
+            <DivName>
+              <PlaceName>{placename}</PlaceName>
+              <Location>{location}</Location>
+              <DivTag>
+              {tags.map((item, i) => (
+                <Tag text={item} key={i} />
+              ))}
+            </DivTag>
+            </DivName>
+            <DivRate>
+            <DivPic>
+              <HostName>{name}</HostName>
+              <HostPic src={picture} />
+            </DivPic>
+  
+            <Rating rate={rating} key={rating.id} />
+          </DivRate>
+          </DivTitle>
+  
+  
+  
+          <DivDrop>
+            <Dropdown title='Description' text={description} key={description} />
+            <Dropdown title='Equipements' style={{ textAlign: 'right' }} text={equipments} key={equipments} />
+          </DivDrop>
+        </DivMain>
+      </DivGlobal>
+    )
+  }
+  */
+  export default FicheLogement
