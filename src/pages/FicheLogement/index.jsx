@@ -4,7 +4,7 @@ import Rating from "../../components/Rating"
 import Carrousel from '../../components/Carrousel'
 import Dropdown from '../../components/Dropdown'
 import Tag from '../../components/Tag'
-import {  useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 console.log(data, 'data dans logement')
 
@@ -20,6 +20,11 @@ color: #FF6060;
 width: 100px;
 margin: 0;
 
+@media (max-width: 400px) {
+  font-size: 12px;
+  width: 50px;
+  line-height: 17.11px;
+}
 `
 
 const PlaceName = styled.h2`
@@ -34,6 +39,13 @@ display: flex;
 align-items: flex-end;
 
 color: #FF6060;
+
+@media (max-width: 400px) {
+font-size: 18px;
+font-weight: 500;
+line-height: 26px;
+}
+
 `
 
 const Location = styled.h3`
@@ -48,12 +60,22 @@ display: flex;
 align-items: flex-end;
 
 color: #FF6060;
+
+@media (max-width: 400px) {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
 `
 
 const HostPic = styled.img`
 width: 64px;
 height: 64px;
 border-radius: 50%;
+
+@media (max-width: 400px) {
+  width: 32px;
+  height: 32px;
 `
 const DivGlobal = styled.div`
 display: flex;
@@ -69,33 +91,60 @@ width: 1220px;
 height: 850px;
 margin-top: 25px;
 margin-bottom: 15px;
-
+@media (max-width: 400px) {
+  height: 795px;
+  width: 335px;
+  border-radius: 10px;
+  margin-bottom: 0px;
+}
 `
 
 const DivTitle = styled.div`
 display: flex;
 justify-content: space-between;
     margin-top: 25px;
-    width: 100%
+    width: 100%;
+    @media (max-width: 400px) {
+      flex-direction: column;
+    }
 `
 
 const DivName = styled.div`
 display: flex;
 flex-direction: column;
 column-gap: 15px;
+
 `
 const DivPic = styled.div`
 display: flex;
 column-gap: 15px;
+@media (max-width: 400px) {
+column-gap: 10px;
+  }
 `
 const DivRate = styled.div`
 display: flex;
-justify-content: space-between;
-width: 100%
+justify-content: space-start;
+flex-direction: column;
+width: 20%;
+margin-top: 15px;
+row-gap: 44px;
+align-items: flex-end;
+
+@media (max-width: 400px) {
+flex-direction: row-reverse;
+row-gap: 0px;
+column-gap: 92px;
+width: 100%;
+}
 `
 const DivTag = styled.div`
 display: flex;
 column-gap: 15px;
+@media (max-width: 400px) {
+width: 350px;
+flex-wrap: wrap;
+}
 `
 
 const DivDrop = styled.div`
@@ -103,9 +152,10 @@ display: flex;
 width: 100%;
 justify-content: space-between;
 column-gap: 13%;
-
+@media (max-width: 400px) {
+  flex-direction: column;
+}
 `
-
 
 function FicheLogement() {
 
@@ -118,66 +168,68 @@ function FicheLogement() {
   console.log(item, "item");
 
   const description = item.description
-console.log (description, "description")
+  console.log(description, "description")
 
-const equipments = item.equipments
-console.log (equipments, "equipments", typeof equipments)
+  const equipments = item.equipments
+  console.log(equipments, "equipments", typeof equipments)
 
-const rating = item.rating
-console.log (rating, "rating")
+  const rating = item.rating
+  console.log(rating, "rating")
 
-const host = item.host
-console.log (host, "host")
+  const host = item.host
+  console.log(host, "host")
 
-const name = host.name
-console.log (name, "name")
+  const name = host.name
+  console.log(name, "name")
 
-const tags = item.tags
-console.log (tags, "tags",typeof tags)
+  const tags = item.tags
+  console.log(tags, "tags", typeof tags)
 
-const picture = host.picture
-console.log (picture, "picture")
+  const picture = host.picture
+  console.log(picture, "picture")
 
-const placename = item.title
-console.log (picture, "picture")
+  const placename = item.title
+  console.log(picture, "picture")
 
-const location = item.location
-console.log (picture, "picture")
+  const location = item.location
+  console.log(picture, "picture")
 
   return (
     <DivGlobal>
-    <DivMain>
-            <Carrousel picture={item.pictures} key={item.id} id={item.id} />
+      <DivMain>
+        <Carrousel picture={item.pictures} key={item.id} id={item.id} />
 
-<DivTitle>
-<DivName>
+        <DivTitle>
+          <DivName>
             <PlaceName>{placename}</PlaceName>
             <Location>{location}</Location>
-            </DivName>
-            <DivPic>
-            <HostName>{name}</HostName>
-            <HostPic src={picture}/>
-            </DivPic>
-            </DivTitle>    
-
-            <DivRate>
-              <DivTag>
+            <DivTag>
             {tags.map((item, i) => (
-            <Tag text={item} key={i}/>
+              <Tag text={item} key={i} />
             ))}
-            </DivTag>
-            <Rating rate={rating} key={rating.id} />
-            </DivRate>
+          </DivTag>
+          </DivName>
+          <DivRate>
+          <DivPic>
+            <HostName>{name}</HostName>
+            <HostPic src={picture} />
+          </DivPic>
 
-            <DivDrop>
-            <Dropdown title='Description' text={description} key={description} />
-            <Dropdown title='Equipements' style={{textAlign: 'right'}} text={equipments} key={equipments}/>
-            </DivDrop>
-        </DivMain>
-        </DivGlobal>
+          <Rating rate={rating} key={rating.id} />
+        </DivRate>
+        </DivTitle>
+
+
+
+        <DivDrop>
+          <Dropdown title='Description' text={description} key={description} />
+          <Dropdown title='Equipements' style={{ textAlign: 'right' }} text={equipments} key={equipments} />
+        </DivDrop>
+      </DivMain>
+    </DivGlobal>
   )
 }
-  
 
-  
-  export default FicheLogement
+
+
+export default FicheLogement

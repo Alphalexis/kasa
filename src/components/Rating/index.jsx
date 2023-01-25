@@ -4,8 +4,6 @@ import {ReactComponent as StarIcon} from '../../assets/images/Star.svg'
 import {ReactComponent as StarBorderIcon} from "../../assets/images/StarEmpty.svg";
 
 
-
-
 const DivHeader = styled.div`
 display: flex;
 `

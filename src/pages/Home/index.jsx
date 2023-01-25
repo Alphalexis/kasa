@@ -26,7 +26,23 @@ padding-left: 20px;
 padding-top: 50px;
 padding-bottom: 0px;
 margin-bottom:43px;
+
+@media (max-width: 400px) {
+  background: none;
+  border-radius: 25px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    margin-bottom: 43px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+}
 `
+
 const freelanceProfiles = [
   {
 TextSection: 'Chez vous, partout et ailleurs',

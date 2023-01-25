@@ -7,6 +7,10 @@ padding: 50px 30px 30px 30px;
 display: flex;
 flex-direction: column;
 align-items: center;
+@media (max-width: 400px) {
+width: 100%
+padding:0
+}
 `
 
 const TextFooter = styled.h2`
@@ -16,7 +20,9 @@ font-size: 24px;
 font-weight: 500;
 line-height: 34px;
 letter-spacing: 0em;
-
+@media (max-width: 400px) {
+  font-size: 12px;
+}
 `
 
 function Footer() {

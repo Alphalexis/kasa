@@ -9,6 +9,12 @@ flex-direction: column;
 align-items: center;
 width: 100%;
 margin-bottom: 40px;
+@media (max-width: 400px) {
+  width: 90%;
+  align-items: flex-start;
+  margin-left: 12px;
+  margin-bottom: 120px;
+}
 `
 const freelanceProfiles = [
   {

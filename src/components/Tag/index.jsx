@@ -18,6 +18,13 @@ padding: 0px 15px;
 
 width: fit-content;
 height: 25px;
+
+@media (max-width: 400px) {
+  font-size: 10px;
+  padding: 2px 15px 2px 10px;
+  border-radius: 5px;
+  height: 18px;
+}
 `
 
 function Tag(props) {

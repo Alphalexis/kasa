@@ -27,6 +27,15 @@ width: 500px;
 border-radius: 10px;
 padding: 5px 20px;
 justify-content: space-between;
+
+@media (max-width: 400px) {
+  height: 30px;
+width: 335px;
+
+  font-size: 13px;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
 `
 
 let TextInfo = styled.h3`
@@ -46,6 +55,14 @@ margin-top: -16px;
 
 color: #FF6060;
 
+@media (max-width: 400px) {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 142.6%;
+  width: 305px;
+  padding: 20px 20px;
+}
+
 `
 
 const DivDisplay = styled.div`
@@ -56,6 +73,11 @@ const Flip = styled.img`
 position: relative;
 bottom: 30px;
 left: 493px;
+
+@media (max-width: 400px) {
+  left:133%;
+  bottom: 16px;
+}
 `
 
 

@@ -10,12 +10,20 @@ justify-content: space-between;
 margin-left: 100px;
 margin-top: 40px;
 width:88%;
+@media (max-width: 400px) {
+  width:330px;
+  margin-left: 30px;
+}
 `
 
 const DivLink = styled.div`
 width: 300px;
 display: flex;
 justify-content: space-around;
+@media (max-width: 400px) {
+  font-size: 12px;
+  width: 150px;
+}
 `
 
 const StyledLink = styled(Link)`
@@ -31,13 +39,21 @@ text-decoration-line: underline;
 
 color: #FF6060;
 text-decoration: none;
+@media (max-width: 400px) {
+  font-size: 12px;
+}
+`
+let Ratio = styled.img`
+@media (max-width: 400px) {
+  width: 130px;
+}
 `
 
 function Header() {
   return (
     <nav>
       <DivHeader>
-      <img src={logo} alt="Kasa logo"/>
+      <Ratio src={logo} alt="Kasa logo"/>
       <DivLink>
         <StyledLink to="/" >Accueil</StyledLink>
       <StyledLink to="/about">A Propos</StyledLink>

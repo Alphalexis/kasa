@@ -19,7 +19,14 @@ margin: 0;
 align-items: center;
     color: #FFFFFF;
     justify-content: center;
-;
+
+@media (max-width: 400px) {
+position: relative;
+width:300px;
+font-size: 24px;
+bottom:50px;
+left: 15px;
+}
 `
 const DivSection = styled.div`
 background-color: black;
@@ -27,8 +34,10 @@ height: 223px;
 width: 1240px;
 object-fit: fill;
 border-radius: 25px;
-
-
+@media (max-width: 400px) {
+width:350px;
+height:111px;
+}
 `
 const DivDisplay = styled.div`
 display: flex;
@@ -44,6 +53,10 @@ opacity: 0.6;
 bottom:223px;
 position: relative;
 mix-blend-mode: lighten;
+@media (max-width: 400px) {
+  width:350px;
+  height:111px;
+  }
 `
 
 

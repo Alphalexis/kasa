@@ -12,18 +12,39 @@ width: 1240px;
 border-radius: 25px;
 background-position-x: center;
  background-position-y: center;
+
+ @media (max-width: 400px) {
+  height: 255px;
+  width: 335px;
+  border-radius: 10px;
+  background-size: cover;
+
+}
 `
 
-const ArrowLeft = styled.img`
+let ArrowLeft = styled.img`
 position: relative;
 bottom: 250px;
 left: 24px;
+
+
+@media (max-width: 400px) {
+width: 15px;
+bottom: 140px;
+left: 10px;
+}
 `
 
-const ArrowRight = styled.img`
+let ArrowRight = styled.img`
 position: relative;
 bottom: 250px;
 left: 1120px;
+
+@media (max-width: 400px) {
+  width: 15px;
+  bottom: 140px;
+  left: 295px;
+  }
 `
 const Page = styled.p`
 position: relative;
@@ -43,9 +64,18 @@ color: #FFFFFF;
 
 bottom: 146px;
 left: 620px;
+
+@media (max-width: 400px) {
+  font-size: 10px;
+  bottom: 65px;
+  left: 165px;
+  }
 `
 const DivCarrousel = styled.div`
 height: 415px;
+@media (max-width: 400px) {
+  height: 255px;
+}
 `
 
 function Carrousel({picture}) {
