@@ -54,8 +54,7 @@ BackgroundSection: Background
 
 
 function Home() {
-  console.log(data,"data")
-  console.log(freelanceProfiles,"freelanceProfiles")
+
     return (
       <DivProper>
         {freelanceProfiles.map((profile,i) => (
@@ -72,11 +71,8 @@ function Home() {
         ))}
 
         </DivDisplay>
-      </DivProper>
-
-      
+      </DivProper> 
     )
-
   }
 
   

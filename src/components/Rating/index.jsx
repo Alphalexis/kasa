@@ -19,8 +19,6 @@ rate = Number(rate)
 
 
         {[...new Array(totalStars)].map((arr, index) => {
-          console.log(index,"index",typeof index);
-          console.log(rate,"rate", typeof rate);
         return index < rate ? <StarIcon key={index} /> : <StarBorderIcon key={index}/>;
       })}
 

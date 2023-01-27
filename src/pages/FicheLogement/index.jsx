@@ -208,41 +208,5 @@ function FicheLogement() {
   );
                     }
 
-  /*
-    return (
-      <DivGlobal>
-        <DivMain>
-          <Carrousel picture={item.pictures} key={item.id} id={item.id} />
   
-          <DivTitle>
-            <DivName>
-              <PlaceName>{placename}</PlaceName>
-              <Location>{location}</Location>
-              <DivTag>
-              {tags.map((item, i) => (
-                <Tag text={item} key={i} />
-              ))}
-            </DivTag>
-            </DivName>
-            <DivRate>
-            <DivPic>
-              <HostName>{name}</HostName>
-              <HostPic src={picture} />
-            </DivPic>
-  
-            <Rating rate={rating} key={rating.id} />
-          </DivRate>
-          </DivTitle>
-  
-  
-  
-          <DivDrop>
-            <Dropdown title='Description' text={description} key={description} />
-            <Dropdown title='Equipements' style={{ textAlign: 'right' }} text={equipments} key={equipments} />
-          </DivDrop>
-        </DivMain>
-      </DivGlobal>
-    )
-  }
-  */
   export default FicheLogement
