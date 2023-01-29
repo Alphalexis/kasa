@@ -1,0 +1,82 @@
+.DivDisplay {
+width: 70%;
+display: flex;
+flex-direction: column;
+margin-bottom: 0;
+}
+
+.TextTitre {
+position: relative;
+top:20px;
+
+color: #FFFFFF;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 142.6%;
+/* identical to box height, or 26px */
+
+display: flex;
+align-items: center;
+background: #FF6060;
+border-radius: 10px;
+
+height: 42px;
+width: 100%;
+border-radius: 10px;
+padding: 5px 20px;
+justify-content: space-between;
+}
+
+.Flip {
+position: relative;
+bottom: 30px;
+left: 98.8%;
+width: 28px;
+}
+
+.TextInfo{
+
+display: flex;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 142.6%;
+
+background: #F7F7F7;
+border-radius: 10px;
+width: 100%;
+padding: 30px 20px;
+margin-top: -16px;
+
+
+color: #FF6060;
+}
+
+@media (max-width: 400px) {
+
+    .TextTitre {
+  height: 30px;
+width: 335px;
+
+  font-size: 13px;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+.Flip{
+    left:133%;
+    bottom: 16px;
+  }
+
+  .TextInfo{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 142.6%;
+    width: 305px;
+    padding: 20px 20px;
+  }
+}

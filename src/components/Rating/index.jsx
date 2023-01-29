@@ -1,12 +1,6 @@
-import styled from 'styled-components'
-import PropTypes from 'prop-types'
+import './Rating.css'
 import {ReactComponent as StarIcon} from '../../assets/images/Star.svg'
 import {ReactComponent as StarBorderIcon} from "../../assets/images/StarEmpty.svg";
-
-
-const DivHeader = styled.div`
-display: flex;
-`
 
 
 function Rating(props){
@@ -15,22 +9,17 @@ rate = Number(rate)
     const totalStars = 5;
     return (
       <div>
-        <DivHeader>
+        <div className='DivRating'>
 
 
         {[...new Array(totalStars)].map((arr, index) => {
         return index < rate ? <StarIcon key={index} /> : <StarBorderIcon key={index}/>;
       })}
 
-        </DivHeader>
+        </div>
          </div>
     )
   }
-
-  Rating.propTypes = {
-    rate: PropTypes.number.isRequired,
-  }
-
 
 
   export default Rating

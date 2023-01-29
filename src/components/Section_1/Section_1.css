@@ -1,0 +1,60 @@
+.DivSection_1{
+display: flex;
+margin-bottom: 43px;
+margin-top: 50px;
+}
+
+.DivSection {
+background-color: black;
+height: 223px;
+width: 1240px;
+object-fit: fill;
+border-radius: 25px;
+}
+
+.TextSection{
+height: 223px;
+width: 1240px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 48px;
+line-height: 142.6%;
+/* or 68px */
+display: flex;
+z-index:2;
+margin: 0;
+align-items: center;
+    color: #FFFFFF;
+    justify-content: center;
+}
+
+.BackgroundSection {
+object-fit: fill;
+border-radius: 25px;
+opacity: 0.6;
+bottom:223px;
+position: relative;
+mix-blend-mode: lighten;
+}
+
+
+@media (max-width: 400px) {
+.DivSection{
+width:350px;
+height:111px;
+}
+
+.TextSection{
+    position: relative;
+width:300px;
+font-size: 24px;
+bottom:50px;
+left: 15px;
+}
+
+.BackgroundSection {
+    width:350px;
+    height:111px;
+}
+}

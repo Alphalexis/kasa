@@ -1,0 +1,157 @@
+.DivGlobal {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 120px;
+}
+
+.DivMain {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 1220px;
+    height: 850px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.DivTitleLog {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.DivName {
+    display: flex;
+    flex-direction: column;
+    column-gap: 15px;
+}
+
+.PlaceName {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 142.6%;
+    margin: 0px;
+
+    display: flex;
+    align-items: flex-end;
+
+    color: #FF6060;
+
+}
+
+.Location {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 142.6%;
+
+    display: flex;
+    align-items: flex-end;
+
+    color: #FF6060;
+}
+
+.DivTag {
+    display: flex;
+    column-gap: 15px;
+}
+
+.DivRate{
+    display: flex;
+justify-content: space-start;
+flex-direction: column;
+width: 20%;
+margin-top: 15px;
+row-gap: 44px;
+align-items: flex-end;
+}
+
+.DivPic{
+    display: flex;
+column-gap: 15px;
+}
+
+.HostName{   
+font-family: 'Montserrat';
+font-size: 18px;
+font-weight: 500;
+line-height: 26px;
+letter-spacing: 0em;
+text-align: right;
+color: #FF6060;
+width: 100px;
+margin: 0;
+}
+
+.HostPic{
+    width: 64px;
+height: 64px;
+border-radius: 50%;
+}
+
+.DivDropLog{
+    display: flex;
+width: 100%;
+justify-content: space-between;
+column-gap: 13%;
+}
+
+@media (max-width: 400px) {
+    .DivMain {
+        height: 795px;
+        width: 335px;
+        border-radius: 10px;
+        margin-bottom: 0px;
+    }
+
+    .DivTitleLog {
+        flex-direction: column;
+    }
+
+    .PlaceName {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 26px;
+    }
+
+    .Location {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+    }
+
+    .DivTag{
+        width: 350px;
+flex-wrap: wrap;
+    }
+ 
+    .DivRate{
+        flex-direction: row-reverse;
+row-gap: 0px;
+column-gap: 92px;
+width: 100%;
+    }
+
+    .DivPic{
+       column-gap: 10px; 
+    }
+
+    .HostName{
+        font-size: 12px;
+        width: 50px;
+        line-height: 17.11px;
+    }
+
+    .HostPic{
+        width: 32px;
+        height: 32px;
+    }
+
+    .DivDropLog{
+        flex-direction: column;
+    }
+}

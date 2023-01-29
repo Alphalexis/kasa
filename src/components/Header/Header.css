@@ -1,0 +1,52 @@
+.DivHeader{
+display: flex;
+align-items: center;
+text-align: right;
+justify-content: space-between;
+margin-left: 100px;
+margin-top: 40px;
+width:88%;
+}
+
+.Ratio{
+    width: 211px;
+}
+
+.DivLink{
+width: 300px;
+display: flex;
+justify-content: space-around;
+}
+
+.Link{
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 142.6%;
+
+text-decoration-line: underline;
+
+color: #FF6060;
+text-decoration: none;
+}
+
+@media (max-width: 400px) {
+    .DivHeader{
+  width:330px;
+  margin-left: 30px;
+}
+
+.Ratio{
+    width: 130px;
+}
+
+.DivLink {
+    font-size: 12px;
+    width: 150px;
+  }
+
+.Link{
+    font-size: 12px;
+}
+}
