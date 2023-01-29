@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import up from '../../assets/images/Vector.png'
 import down from '../../assets/images/Vector-flip.png'
@@ -23,7 +22,7 @@ background: #FF6060;
 border-radius: 10px;
 
 height: 42px;
-width: 500px;
+width: 100%;
 border-radius: 10px;
 padding: 5px 20px;
 justify-content: space-between;
@@ -49,7 +48,7 @@ line-height: 142.6%;
 
 background: #F7F7F7;
 border-radius: 10px;
-width: 500px;
+width: 100%;
 padding: 30px 20px;
 margin-top: -16px;
 
@@ -72,7 +71,7 @@ width 70%
 const Flip = styled.img`
 position: relative;
 bottom: 30px;
-left: 493px;
+left: 98.8%;
 
 @media (max-width: 400px) {
   left:133%;
@@ -118,14 +117,5 @@ let texttodisplay
   )
 }
 
-Dropdown.propTypes = {
-  title: PropTypes.string.isRequired,
-  text: PropTypes.array.isRequired,
-}
-
-Dropdown.defaultProps = {
-  title: '',
-  text: '',
-}
 
 export default Dropdown
